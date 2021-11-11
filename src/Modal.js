@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, CloseButton } from 'react-bootstrap';
 
 const ModalComponent = (props) => {
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+    }
     const handleShow = () => setShow(true);
     return (
         <div>
@@ -19,9 +21,11 @@ const ModalComponent = (props) => {
                     backdrop="static"
                     keyboard={false}
                     centered
+                    animation={false}
                 >
-                    <Modal.Header closeButton>
+                    <Modal.Header >
                         <Modal.Title>{props.title}</Modal.Title>
+                    <CloseButton onClick={()=>{props.changeIndex(-1);handleClose()}}/>
                     </Modal.Header>
                     <Modal.Body>
                         {props.question}

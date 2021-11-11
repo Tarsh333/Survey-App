@@ -4,12 +4,13 @@ import Modal from './Modal'
 import { Button } from 'react-bootstrap'
 const CardElement = ({ data, index }) => {
     const [modalIndex, setModalIndex] = useState(-1)
-    const { header, title, text, link, questions } = data
+    const { header, title, text, link, questions,image } = data
     const [answers, setAnswers] = useState([])
     useEffect(() => {
         if (modalIndex !== -1 && modalIndex < questions.length) {
             const modal = document.querySelectorAll('.display-none')[(index * questions.length) + modalIndex]
             // console.log(modal);
+            // console.log(modalIndex);
             // modal.classList.remove("display-none")
             modal.click()
         }
@@ -31,20 +32,24 @@ const CardElement = ({ data, index }) => {
         newAnswers[i] = val
         setAnswers(newAnswers)
     }
+    const changeIndex=(x)=>{
+        setModalIndex(x)
+    }
     return (
         <div>
             <Card border="primary" className="pb-2 mb-4">
                 <Card.Header as="h4">{header}</Card.Header>
-                <Card.Body>
+                <Card.Img variant="top" src={image} className="p-4 image-card"/>
+                <Card.Body className="px-4">
                     <Card.Title as="h5">{title}</Card.Title>
                     <Card.Text>
                         {text}
                     </Card.Text>
-                    <Button onClick={() => { setModalIndex(0) }} className="btn-primary btn" variant="primary" >
+                    <Button onClick={() => { setModalIndex(0)}} className="btn-primary btn" variant="primary" >
                         Give Survey
                     </Button>
                     {questions.map((q, i) => {
-                        return (<Modal title={`Survey ${index} Question ${i + 1}`} question={q} index={i} next={next} previous={previous} state={answers[i]} changeModalState={changeModalState} />)
+                        return (<Modal title={`Question ${i + 1}`} question={q} index={i} next={next} previous={previous} state={answers[i]} changeModalState={changeModalState} changeIndex={changeIndex}/>)
                     })}
                 </Card.Body>
             </Card>

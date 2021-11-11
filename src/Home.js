@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container,Row } from 'react-bootstrap'
+import { Col, Container,Row, Stack } from 'react-bootstrap'
 import Card from './Card'
 // import { useGlobalContext } from './Context'
 import Survey from './survey'
@@ -7,17 +7,17 @@ const Home = () => {
     // const {something,changeSomething}=useGlobalContext()
     return (
         <div>
-            <h1 align="center" >Latest Surveys</h1>
-            <Container fluid className="mt-4">
-                <Row>
+            <h1 align="center" className="my-5">Latest Surveys</h1>
+            <Stack gap={4} className="my-5 col-md-8 col-lg-6 mx-auto">
+                
             {Survey.map((data,id)=>{
-                return (<Col md={4} sm={6} xs={12}><Card key={id} data={data} index={id}/></Col>)
+                return (<Card  key={id} data={data} index={id}/>)
             })}
             
             {/* {something} */}
             {/* <button onClick={()=>{changeSomething('random')}}>Change state</button> */}
-            </Row>
-            </Container>
+            
+            </Stack>
         </div>
     )
 }
