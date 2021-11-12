@@ -36,7 +36,7 @@ const CardElement = ({ data, index }) => {
         setModalIndex(x)
     }
     return (
-        <div>
+        
             <Card border="primary" className="pb-2 mb-4">
                 <Card.Header as="h4">{header}</Card.Header>
                 <Card.Img variant="top" src={image} className="p-4 image-card"/>
@@ -53,7 +53,7 @@ const CardElement = ({ data, index }) => {
                     })}
                 </Card.Body>
             </Card>
-        </div>
+        
     )
 }
 

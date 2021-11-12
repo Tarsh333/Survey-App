@@ -5,3 +5,37 @@
     width: 100%;
     height: 300px;
 }
+.sidebar{
+    /* border:2px solid black; */
+    position:fixed;
+    left: 0px;
+    height: 100vh;
+    padding: 10px 12.5px;
+    font-size: 22px;
+}
+.sidebar svg{
+    margin: 0px 6px;
+    font-size: 25px;
+}
+.sidebar div{
+    margin: 10px 0px;
+}
+.page{
+    margin-top: 75px;
+}
+@media screen and (max-width:920px) {
+    .sidebar-text{
+        display: none;
+    }
+    .sidebar svg{
+        font-size: 30px;
+    }
+   
+}
+@media screen and (max-width:576px) {
+    
+    .page{
+        padding-left: 70px;
+        padding-right: 10px;
+    }
+}

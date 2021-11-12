@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <div>
             <h1 align="center" className="my-5">Latest Surveys</h1>
-            <Stack gap={4} className="my-5 col-md-8 col-lg-6 mx-auto">
+            <Stack gap={4} className="my-5 col-md-7 col-sm-8 col-xs-8 col-lg-6 mx-auto">
                 
             {Survey.map((data,id)=>{
                 return (<Card  key={id} data={data} index={id}/>)
