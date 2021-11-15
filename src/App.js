@@ -4,20 +4,22 @@ import Header from './Header'
 import Home from './Home'
 import Sidebar from './Sidebar'
 import { Container } from 'react-bootstrap';
+import AddSurvey from './AddSurvey/AddSurvey'
 const App = () => {
     return (
         <>
             <Header />
-                <Router>
-                    <Sidebar className="col-md-2"/>
+            <Router>
+                <Sidebar className="col-md-2" />
+                <div className="page">
                     <Switch>
-                        <div className="page">
-                        <Route exact path="/"><Home className="col-md-10"/></Route>
+                        <Route exact path="/"><Home className="col-md-10" /></Route>
+                        <Route exact path="/add-survey"><AddSurvey className="col-md-10" /></Route>
                         {/* <Route> {login?<Profile/>:<Redirect to="/"/>}</Route> */}
                         {/* <Route exact path="*"><Error /></Route> */}
-                    </div>
                     </Switch>
-                </Router>
+                </div>
+            </Router>
         </>
     )
 }

@@ -5,10 +5,22 @@
         link:"#link",
         text:"This is a short summary about the survey",
         questions:[
-            "Sample Question 1. Please Write Your Answer",
-            "Sample Question 2. Please Write Your Answer",
-            "Sample Question 3. Please Write Your Answer",
-            "Sample Question 4. Please Write Your Answer",
+            {
+                question:"Sample Question 1. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 2. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 3. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 4. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
         ],
         image:'https://source.unsplash.com/1600x900/?computer'
     },
@@ -18,10 +30,22 @@
         link:"#link",
         text:"This is a short summary about the survey",
         questions:[
-            "Sample Question 1. Please Write Your Answer",
-            "Sample Question 2. Please Write Your Answer",
-            "Sample Question 3. Please Write Your Answer",
-            "Sample Question 4. Please Write Your Answer",
+            {
+                question:"Sample Question 1. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 2. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 3. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 4. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
         ],
         image:'https://source.unsplash.com/1600x900/?computer'
     },
@@ -31,10 +55,22 @@
         link:"#link",
         text:"This is a short summary about the survey",
         questions:[
-            "Sample Question 1. Please Write Your Answer",
-            "Sample Question 2. Please Write Your Answer",
-            "Sample Question 3. Please Write Your Answer",
-            "Sample Question 4. Please Write Your Answer",
+            {
+                question:"Sample Question 1. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 2. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 3. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 4. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
         ],
         image:'https://source.unsplash.com/1600x900/?computer'
     },
@@ -44,10 +80,22 @@
         link:"#link",
         text:"This is a short summary about the survey",
         questions:[
-            "Sample Question 1. Please Write Your Answer",
-            "Sample Question 2. Please Write Your Answer",
-            "Sample Question 3. Please Write Your Answer",
-            "Sample Question 4. Please Write Your Answer",
+            {
+                question:"Sample Question 1. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 2. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 3. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 4. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
         ],
         image:'https://source.unsplash.com/1600x900/?computer'
     },
@@ -57,10 +105,22 @@
         link:"#link",
         text:"This is a short summary about the survey",
         questions:[
-            "Sample Question 1. Please Write Your Answer",
-            "Sample Question 2. Please Write Your Answer",
-            "Sample Question 3. Please Write Your Answer",
-            "Sample Question 4. Please Write Your Answer",
+            {
+                question:"Sample Question 1. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 2. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 3. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 4. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
         ],
         image:'https://source.unsplash.com/1600x900/?computer'
     },
@@ -70,10 +130,22 @@
         link:"#link",
         text:"This is a short summary about the survey",
         questions:[
-            "Sample Question 1. Please Write Your Answer",
-            "Sample Question 2. Please Write Your Answer",
-            "Sample Question 3. Please Write Your Answer",
-            "Sample Question 4. Please Write Your Answer",
+            {
+                question:"Sample Question 1. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 2. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 3. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
+            {
+                question:"Sample Question 4. Please choose your answer",
+                options:["Option1","Option2","Option3","Option4"]
+            },
         ],
         image:'https://source.unsplash.com/1600x900/?computer'
     }
