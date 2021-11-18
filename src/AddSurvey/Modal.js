@@ -75,6 +75,9 @@ const ModalComponent = ({ incQues, submitSurvey,disabledBtn }) => {
             submitSurvey()
         }
     }, [submitted])
+    useEffect(() => {
+        setSubmitted(false)
+    }, [])
     return (
         <div>
             <>

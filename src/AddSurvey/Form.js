@@ -13,9 +13,28 @@ const FormComponent = () => {
             return newQues
         })
     }
-   const submitSurvey=()=>{
-       window.alert("Survey Added")
-       console.log(survey,title,desc,link);
+   const submitSurvey=async()=>{
+       console.log("submitted");
+    const res = await fetch("http://localhost:5000/add-survey", {
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': JSON.stringify(localStorage.getItem('token'))
+        },
+        method: 'POST',
+        body: JSON.stringify({survey,title,desc,link})
+    })
+    const result = await res.json()
+    console.log(result);
+    if (result.error) {
+        window.alert("Something Went wrong")
+    }
+    else {
+        window.alert("Survey Added")
+    }
+    setSurvey([])
+    setTitle("")
+    setDesc("")
+    setLink("")
    }
     
     return (

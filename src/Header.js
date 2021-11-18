@@ -1,7 +1,8 @@
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
-
+import { Container, Nav, Navbar,Button } from 'react-bootstrap'
+import { useGlobalContext } from './Context'
 const Header = () => {
+    const {loggedIn,changeLogin}=useGlobalContext()
     return (
         <div>
             <Navbar bg="primary" variant="dark" fixed="top">
@@ -12,6 +13,7 @@ const Header = () => {
                         <Nav.Link href="#features">Features</Nav.Link>
                         <Nav.Link href="#pricing">Pricing</Nav.Link>
                     </Nav>
+                    {loggedIn&&<Button variant="light" onClick={()=>{changeLogin(false)}}>Log Out</Button>}
                 </Container>
             </Navbar>
         </div>

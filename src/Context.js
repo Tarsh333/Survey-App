@@ -1,18 +1,19 @@
 import React, { useContext, useReducer } from 'react'
 import Reducer from './Reducer'
 const AppContext=React.createContext()
+const token=localStorage.getItem('token')
 const initialState={
-    something:"something"
+    loggedIn:token?true:false
 }
 const Context = ({children}) => {
     const [state, dispatch] = useReducer(Reducer, initialState)
-    const changeSomething=(payload)=>{
-        dispatch({type:'CHANGE_SOMETHING',payload})
+    const changeLogin=(payload)=>{
+        dispatch({type:'CHANGE_LOGIN',payload})
     }
     return (
         <AppContext.Provider value={{
             ...state,
-            changeSomething
+            changeLogin
         }}>
             {children}
         </AppContext.Provider>
