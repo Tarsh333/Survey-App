@@ -4,12 +4,12 @@ import Modal from './Modal'
 import { Button } from 'react-bootstrap'
 const CardElement = ({ data, index }) => {
     const [modalIndex, setModalIndex] = useState(-1)
-    const { header, title, text, link, questions, image } = data
+    const { header, title, text, link, questions, image,description } = data
     const [answers, setAnswers] = useState([])
     useEffect(() => {
         if (modalIndex !== -1 && modalIndex < questions.length) {
             const modal = document.querySelectorAll('.display-none')[(index * questions.length) + modalIndex]
-            // console.log(modal);
+            console.log(modal);
             // console.log(modalIndex);
             // modal.classList.remove("display-none")
             modal.click()
@@ -39,10 +39,10 @@ const CardElement = ({ data, index }) => {
     return (
 
         <Card border="primary" className="pb-2 mb-4">
-            <Card.Header as="h4">{header}</Card.Header>
-            <Card.Img variant="top" src={image} className="p-4 image-card" />
+            <Card.Header as="h4">{title}</Card.Header>
+            <Card.Img variant="top" src={link} className="p-4 image-card" />
             <Card.Body className="px-4">
-                <Card.Title as="h5">{title}</Card.Title>
+                <Card.Title as="h5">{description}</Card.Title>
                 <Card.Text>
                     {text}
                 </Card.Text>

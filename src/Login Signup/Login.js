@@ -3,7 +3,7 @@ import { Form , Button} from "react-bootstrap"
 import { Link } from "react-router-dom"
 import { useGlobalContext } from '../Context'
 const Login = () => {
-    const {changeLogin}=useGlobalContext()
+    const {changeLogin,changeFollowingArray}=useGlobalContext()
     const [form, setForm] = useState({  password: '', email: '' })
 
     const formControl = (e) => {
@@ -12,7 +12,7 @@ const Login = () => {
     }
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await fetch("http://localhost:5000/signin", {
+        const res = await fetch("https://survey-app-backend-1234.herokuapp.com/signin", {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -26,7 +26,9 @@ const Login = () => {
         }
         else {
             localStorage.setItem('token', result?.token)
+            localStorage.setItem('following', JSON.stringify(result?.following))
             changeLogin(true)
+            changeFollowingArray(result.following)
         }
     }
     return (

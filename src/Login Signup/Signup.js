@@ -6,13 +6,13 @@ import { useGlobalContext } from '../Context'
 const Signup = () => {
     const {changeLogin}=useGlobalContext()
 
-    const [form, setForm] = useState({ name: '', password: '', email: '', address: '', phone: '' })
+    const [form, setForm] = useState({ name: '', password: '', email: '', address: '', phone: '',userLevel:0 })
     // useEffect(() => {
     //     console.log(form);
     // }, [form])
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const res = await fetch("http://localhost:5000/signup", {
+        const res = await fetch("https://survey-app-backend-1234.herokuapp.com/signup", {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -26,6 +26,7 @@ const Signup = () => {
         }
         else {
             localStorage.setItem('token', result?.token)
+            localStorage.setItem('following', JSON.stringify(result?.following))
             changeLogin(true)
         }
     }
