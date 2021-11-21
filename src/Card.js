@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Card } from 'react-bootstrap'
 import Modal from './Modal'
 import { Button } from 'react-bootstrap'
-const CardElement = ({ data, index }) => {
+const CardElement = ({ data, cardNo }) => {
     const [modalIndex, setModalIndex] = useState(-1)
-    const { header, title, text, link, questions, image,description } = data
+    const {  title, text, link, questions,description } = data
     const [answers, setAnswers] = useState([])
     useEffect(() => {
         if (modalIndex !== -1 && modalIndex < questions.length) {
-            const modal = document.querySelectorAll('.display-none')[(index * questions.length) + modalIndex]
+            const modal = document.querySelectorAll(`.display-none-${cardNo}`)[modalIndex]
             console.log(modal);
             // console.log(modalIndex);
             // modal.classList.remove("display-none")
@@ -20,6 +20,7 @@ const CardElement = ({ data, index }) => {
         if (modalIndex === questions.length - 1) {
             window.alert("Survey Recorded")
             console.log(answers);
+            return
         }
         setModalIndex((prev) => { return (prev + 1) })
 
@@ -50,7 +51,7 @@ const CardElement = ({ data, index }) => {
                     Give Survey
                 </Button>
                 {questions.map((q, index) => {
-                    return (<div key={index} ><Modal title={`Question ${index + 1}`} question={q} index={index} next={next} previous={previous} state={answers[index]} changeModalState={changeModalState} changeIndex={changeIndex} /></div>)
+                    return (<div key={index} ><Modal title={`Question ${index + 1}`} question={q} index={index} next={next} previous={previous} state={answers[index]} changeModalState={changeModalState} changeIndex={changeIndex} cardNo={cardNo}/></div>)
                 })}
             </Card.Body>
         </Card>

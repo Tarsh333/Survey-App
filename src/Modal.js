@@ -11,7 +11,7 @@ const ModalComponent = (props) => {
     return (
         <div>
             <>
-                <Button className="display-none" variant="primary" onClick={handleShow}>
+                <Button className={`display-none display-none-${props.cardNo}`} variant="primary" onClick={handleShow}>
                     Give Survey
                 </Button>
 
