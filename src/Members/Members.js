@@ -81,9 +81,9 @@ const Members = () => {
                 Submit
             </Button>
             </Form>
-            {members.length > 0 && <table> {members.map((k, i) => {
+            {members.length > 0 && <table><tbody> {members.map((k, i) => {
                 return (<tr key={i}><td>{k.name}</td><td><Button onClick={() => { changeFollowing(k._id) }}>{following.includes(k._id) ? "Following" : "Follow"}</Button></td></tr>)
-            })}</table>}
+            })}</tbody></table>}
         </div>
     )
 }

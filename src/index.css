@@ -20,9 +20,7 @@
 .sidebar div{
     margin: 10px 0px;
 }
-.page{
-    /* margin-top: 75px; */
-}
+
 @media screen and (max-width:920px) {
     .sidebar-text{
         display: none;

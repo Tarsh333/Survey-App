@@ -20,9 +20,9 @@ const Login = () => {
             body: JSON.stringify({...form})
         })
         const result = await res.json()
-        console.log(result);
+        // console.log(result);
         if (!result.id) {
-            console.log("failed");
+            window.alert(result.message)
         }
         else {
             localStorage.setItem('token', result?.token)

@@ -7,6 +7,7 @@ import Login from './Login Signup/Login'
 import { useGlobalContext } from './Context'
 import Signup from './Login Signup/Signup'
 import Members from './Members/Members'
+import Survey from './Survey Search/Survey'
 const App = () => {
     const {loggedIn}=useGlobalContext()
 
@@ -21,6 +22,7 @@ const App = () => {
                         <Route exact path="/members">{loggedIn?<Members className="col-md-10" />:<Redirect to="/login"/>}</Route>
                         <Route exact path="/login">{!loggedIn?<Login className="col-md-10" />:<Redirect to="/"/>}</Route>
                         <Route exact path="/signup">{!loggedIn?<Signup className="col-md-10" />:<Redirect to="/"/>}</Route>
+                        <Route exact path="/surveys">{loggedIn?<Survey className="col-md-10" />:<Redirect to="/login"/>}</Route>
                         {/* <Route> {login?<Profile/>:<Redirect to="/"/>}</Route> */}
                         {/* <Route exact path="*"><Error /></Route> */}
                     </Switch>

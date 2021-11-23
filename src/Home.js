@@ -27,7 +27,7 @@ const Home = () => {
             <Stack gap={4} className="my-5 col-md-7 col-sm-8 col-xs-8 col-lg-6 mx-auto">
                 
             {survey.map((data,id)=>{
-                return (<Card  key={id} data={data} cardNo={id}/>)
+                return (<Card  key={id} data={data} cardno={id}/>)
             })}
             
             {/* {something} */}
