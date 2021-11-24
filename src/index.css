@@ -57,3 +57,8 @@
 .members form{
     display: flex;
 }
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

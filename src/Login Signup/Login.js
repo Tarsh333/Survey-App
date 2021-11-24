@@ -5,12 +5,13 @@ import { useGlobalContext } from '../Context'
 const Login = () => {
     const {changeLogin,changeFollowingArray}=useGlobalContext()
     const [form, setForm] = useState({  password: '', email: '' })
-
+    const [loading, setLoading] = useState(false)
     const formControl = (e) => {
         const { name, value } = e.target
         setForm((prev) => { return ({ ...prev, [name]: value }) })
     }
     const handleSubmit = async (e) => {
+        setLoading(true)
         e.preventDefault()
         const res = await fetch("https://survey-app-backend-1234.herokuapp.com/signin", {
             headers: {
@@ -30,6 +31,7 @@ const Login = () => {
             changeLogin(true)
             changeFollowingArray(result.following)
         }
+        setLoading(false)
     }
     return (
         <div className="my-5 col-md-7 col-sm-8 col-xs-8 col-lg-6 mx-auto">
@@ -44,8 +46,8 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name="password" placeholder="Password" onChange={formControl} required/>
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button variant="primary" type="submit" disabled={loading}>
+                    {loading?"Loading...":"Submit"}
                 </Button>
             </Form>
             <div className="mt-4"></div><Link to="/signup">Don't have an account? Signup</Link>

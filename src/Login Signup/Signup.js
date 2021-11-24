@@ -5,12 +5,13 @@ import { useGlobalContext } from '../Context'
 
 const Signup = () => {
     const {changeLogin}=useGlobalContext()
-
+    const [loading, setLoading] = useState(false)
     const [form, setForm] = useState({ name: '', password: '', email: '', address: '', phone: '',userLevel:0 })
     // useEffect(() => {
     //     console.log(form);
     // }, [form])
     const handleSubmit = async (e) => {
+        setLoading(true)
         e.preventDefault()
         const res = await fetch("https://survey-app-backend-1234.herokuapp.com/signup", {
             headers: {
@@ -29,6 +30,7 @@ const Signup = () => {
             localStorage.setItem('following', JSON.stringify(result?.following))
             changeLogin(true)
         }
+        setLoading(false)
     }
     const formControl = (e) => {
         const { name, value } = e.target
@@ -60,8 +62,8 @@ const Signup = () => {
                     <Form.Label >Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" required={true} onChange={formControl} name="password" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
+                <Button variant="primary" type="submit" disabled={loading}>
+                    {loading?"Loading...":"Submit"}
                 </Button>
             </Form>
             <div className="mt-4"></div>  <Link to="/login">Already Have an account? Login</Link>
