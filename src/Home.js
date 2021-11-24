@@ -17,7 +17,10 @@ const Home = () => {
             },
         })
         const result = await res.json()
-        setSurvey(result.surveys)
+        if (result.error) {
+            window.alert("Something went wrong. Please try again.")
+        } else {
+        setSurvey(result.surveys)}
         setLoading(false)
         // console.log(result);
     }

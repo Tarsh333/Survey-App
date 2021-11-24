@@ -17,7 +17,11 @@ const Survey = () => {
             }
         })
         const result = await res.json()
-        setSurveys(result.surveys)
+        if (result.error) {
+            window.alert("Something went wrong. Please try again.")
+        } else {
+            setSurveys(result.surveys)
+        }
         setLoading(false)
         // console.log(result);
     }
@@ -38,7 +42,7 @@ const Survey = () => {
                     <span className="visually-hidden">Loading...</span>
                 </Spinner> : (surveys.length > 0 ? surveys.map((data, id) => {
                     return (<Card key={id} data={data} cardno={id} />)
-                }) :first && <h2>No results found</h2>)}
+                }) : first && <h2>No results found</h2>)}
             </Stack>
         </div>
     )

@@ -16,9 +16,13 @@ const Members = () => {
             }
         })
         const result = await res.json()
-        // console.log(result);
-        setMembers(result.users)
+        if (result.error) {
+            window.alert("Something went wrong. Please try again.")
+        } else {
+            setMembers(result.users)    
+        }
         setLoading(false)
+        // console.log(result);
     }
     const { following, changeFollowingArray } = useGlobalContext()
     // const getMembers = async () => {
@@ -44,8 +48,11 @@ const Members = () => {
             body: JSON.stringify({ id: id })
         })
         const result = await res.json()
+        if (result.error) {
+            window.alert("Something went wrong. Please try again.")
+        } else {
         const newFollowing = [...following, id]
-        changeFollowingArray(newFollowing)
+        changeFollowingArray(newFollowing)}
         // console.log(result);
     }
     const unfollow = async (id) => {
@@ -58,13 +65,16 @@ const Members = () => {
             body: JSON.stringify({ id: id })
         })
         const result = await res.json()
+        if (result.error) {
+            window.alert("Something went wrong. Please try again.")
+        } else {
         // console.log(following);
         const newFollowing = following.filter((k) => {
             if (k !== id) {
                 return k
             }
         })
-        changeFollowingArray(newFollowing)
+        changeFollowingArray(newFollowing)}
         // console.log(result);
     }
     const changeFollowing = (id) => {
